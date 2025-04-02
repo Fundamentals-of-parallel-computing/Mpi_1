@@ -15,3 +15,6 @@ LIBS += -lmpi_cxx -lmpi
 
 SOURCES += \
         main.cpp
+
+DISTFILES += \
+    README.md
