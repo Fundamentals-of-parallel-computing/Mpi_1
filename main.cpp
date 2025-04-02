@@ -54,7 +54,7 @@ int main(int argc, char* argv[]) {
     MPI_Comm_size(MPI_COMM_WORLD, &totalProcesses);
 
     // Настройки и создание объекта
-    const int arrayLength = 1'000'000;
+    const int arrayLength = 1000000;
     ArraySummer summer(arrayLength, 123);
 
     if (processId == 0) {
@@ -90,13 +90,11 @@ int main(int argc, char* argv[]) {
 
     if (processId == 0) {
         std::cout << "Array length: " << arrayLength << "\n";
-        std::cout << "Number of processes: " << totalProcesses << "\n";
+
         std::cout << "Single-thread sum: " << singleThreadResult
                   << " (Time: " << singleThreadTime << " sec)\n";
         std::cout << "Multi-thread sum:  " << multiThreadResult
                   << " (Time: " << multiThreadTime << " sec)\n";
-        std::cout << "Acceleration: " << singleThreadTime / multiThreadTime
-                  << "\n";
     }
 
     MPI_Finalize();

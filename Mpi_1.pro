@@ -10,5 +10,8 @@ MPI_LFLAGS = $$system(mpicc --showme:link)
 QMAKE_CXXFLAGS += $$MPI_CFLAGS
 LIBS += $$MPI_LFLAGS
 
+INCLUDEPATH += /usr/include/openmpi
+LIBS += -lmpi_cxx -lmpi
+
 SOURCES += \
         main.cpp
